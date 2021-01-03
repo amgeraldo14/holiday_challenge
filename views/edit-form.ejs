@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>EDIT DATA</h1>
+  <form action="/customers/<%=data.id%>/editProfile" method="POST">
+    <div>
+      <label for="identityNumber">Identity Number:</label>
+      <input type="text" name="identityNumber" id="identityNumber" value="<%=data.identityNumber%>">
+    </div>
+    <br>
+    <div>
+    <label for="fullName">Full Name:</label>
+      <input type="text" name="fullName" id="fullName" value="<%=data.fullName%>">
+    </div>
+    <br>
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" name="address" id="address" value="<%=data.address%>">
+    </div>
+    <br>
+    <div>
+      <label for="birthDate">Birth Date (default value jangan lupa):</label>
+      <input type="date" name="birthDate" id="birthDate" value="<%=data.birthDate%>">
+    </div>
+
+    <div>
+      <p>Gender:</p>
+      <label for="male">Male</label>
+      <input type="radio" value="male" id="male" name="gender" 
+      <%if(data.gender == 'male'){%>
+        checked
+      <%}%>
+      >
+      <label for="female">Female</label>
+      <input type="radio" value="female" id="female" name="gender"
+      <%if(data.gender == 'female'){%>
+        checked
+      <%}%>
+      >
+    </div>
+
+    <button type="submit">Submit</button>
+    
+</body>
+</html>

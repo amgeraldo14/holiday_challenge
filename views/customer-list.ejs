@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <br>
+  <a href="/customers/register">REGISTER HERE</a>
+  <br>
+  <br>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Identity Number</th>
+      <th>Full Name</th>
+      <th>Address</th>
+      <th>Birth Date</th>
+      <th>Gender</th>
+      <th>Action</th>
+    </tr>
+    <% customers.forEach(el => { %>
+      <tr>
+        <td> <%= el.id %> </td>
+        <td> <%= el.identityNumber %> </td>
+        <td> <%= el.fullName %> </td>
+        <td> <%= el.address %> </td>
+        <td> <%= el.birthDate %> </td>
+        <td> <%= el.gender %> </td>
+        <td> 
+          <a href="/customers/<%= el.id %>/editProfile">Edit Profile</a> ||
+          <a href="/customers/<%= el.id %>/accounts">View Accounts</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/customers/<%=data.id%>/accounts" method="POST">
+    <h1><%=data.fullName%> Account List</h1>
+    <table border="1">
+      <tr>
+        <th>Account Number</th>
+        <th>Type</th>
+        <th>Balance</th>
+        <th>Action</th>
+      </tr>
+      <% data.Accounts.forEach(el => { %>
+        <tr>
+          <td> <%=el.accountNumber%> </td>
+          <td> <%=el.type%> </td>
+          <td> <%=formatRupiah(el.balance)%> </td>
+          <td> <a href="/customers/<%=data.id%>/accounts/<%=el.id%>/transfer">Transfer</a> </td>
+        </tr>
+      <% }) %>
+    </table>
+    <br>
+    <h2>Add New Account</h2>
+    <select name="type">
+      <option disabled selected> SELECT YOUR ACCOUNT </option>
+      <option value="On Account">On Account</option>
+      <option value="Xtra Payroll">Xtra Payroll</option>
+      <option value="Tabunganku">Tabunganku</option>
+    </select>
+    <br><br>
+    <label for="balance">Balance:</label>
+    <input type="text" id="balance" name="balance">
+    <button type="submit">Submit</button>
+  </form>
+  
+</body>
+</html>

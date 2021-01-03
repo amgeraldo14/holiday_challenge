@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>PLEASE INPUT YOUR DATA</h1>
+  <form action="/customers/register" method="POST">
+    <div>
+      <label for="identityNumber">Identity Number:</label>
+      <input type="text" name="identityNumber" id="identityNumber">
+    </div>
+    <br>
+    <div>
+    <label for="fullName">Full Name:</label>
+      <input type="text" name="fullName" id="fullName">
+    </div>
+    <br>
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" name="address" id="address">
+    </div>
+    <br>
+    <div>
+      <label for="birthDate">Birth Date:</label>
+      <input type="date" name="birthDate" id="birthDate">
+    </div>
+
+    <div>
+      <p>Gender:</p>
+      <label for="male">Male</label>
+      <input type="radio" value="male" id="male" name="gender">
+      <label for="female">Female</label>
+      <input type="radio" value="female" id="female" name="gender">
+    </div>
+
+    <button type="submit">Submit</button>
+    
+
+
+
+  </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p> Transfer From <%=account[0].accountNumber%>  <%=account[0].type%>  <%=formatRupiah(account[0].balance)%></p>
+  <form action="/customers/<%=id%>/accounts/<%=account[0].id%>/transfer" method="POST">
+    <label for="amount">Amount:</label>
+    <input type="text" name="amount" id="amount">
+    <br><br>
+    <label for="target">Transfer To:</label>
+    <select id="target" name="target">
+      <%customer.forEach(el => {%>
+        <%if(el.Accounts){%>
+          <%el.Accounts.forEach(element => {%>
+            <option value="<%=element.id%>"> <%=element.accountNumber%> - <%=el.fullName%> </option>
+          <%})%>
+        <%}%>
+      <%})%>
+    </select>
+    <br><br>
+    <button type="submit">Transfer</button>
+  </form>
+</body>
+</html>
